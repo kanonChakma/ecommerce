@@ -1,14 +1,9 @@
-import Link from 'next/link'
-import React from 'react'
+/* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 import { urlFor } from '../lib/client';
-import banner from '../model/banner';
-import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
-interface props{
-  BannerData:banner
-}
 
-export const Banner:React.FC<props> = ({BannerData}) => {
-     let data:ImageUrlBuilder|string = urlFor(BannerData.image);
+export const Banner= ({BannerData}) => {
+     let data= urlFor(BannerData.image);
   return (
     <div className="hero-banner-container">
        

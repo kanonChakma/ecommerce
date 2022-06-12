@@ -1,11 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import React from 'react'
-import { urlFor } from '../lib/client'
-import banner from '../model/banner';
-interface props{
-  footerBanner:banner
-}
-export const FooterBanner:React.FC<props> = ({footerBanner}) => {
+import { urlFor } from '../lib/client';
+
+export const FooterBanner = ({footerBanner}) => {
   const { discount, largeText1, largeText2, saleTime, smallText, midText, desc, product, buttonText, image }=footerBanner;
   return (
     <div className="footer-banner-container">
@@ -26,7 +23,7 @@ export const FooterBanner:React.FC<props> = ({footerBanner}) => {
         </div>
 
         <img 
-          src={urlFor(image)} className="footer-banner-image"
+          src={urlFor(image)} alt="image" className="footer-banner-image"
         />
       </div>
     </div>

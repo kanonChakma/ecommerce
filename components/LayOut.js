@@ -1,20 +1,18 @@
-import React from 'react';
 import Head from 'next/head';
 
 
-import{ Footer} from './Footer';
-import { NavBar } from './NavBar';
-interface props{
-  children: JSX.Element[] | JSX.Element
-}
-export const LayOut:React.FC<props> = ({children}) => {
+import { Footer } from './Footer';
+import Navbar from './NavBar';
+
+
+export const LayOut = ({children}) => {
   return (
     <div className="layout">
     <Head>
       <title>JS Mastery Store</title>
     </Head>
     <header>
-      <NavBar />
+      <Navbar />
     </header>
     <main className="main-container">
       {children}

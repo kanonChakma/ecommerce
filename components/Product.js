@@ -1,11 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import React from 'react'
 import { urlFor } from '../lib/client';
-interface props {
-  product:any
-}
-export const Product:React.FC<props> = ({product}) => {
+
+export const Product= ({product}) => {
  const { image, name, slug, price } = product;
+ let url =urlFor(image && image[0]);
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
@@ -14,6 +13,7 @@ export const Product:React.FC<props> = ({product}) => {
             src={urlFor(image && image[0])}
             width={250}
             height={250}
+            alt="iamges"
             className="product-image"
           />
           <p className="product-name">{name}</p>
