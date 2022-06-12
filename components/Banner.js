@@ -14,7 +14,7 @@ export const Banner= ({BannerData}) => {
           <img src={data} alt="headphone" className="hero-banner-image"/>
        </div>
        <div>
-          <Link href={`/product/${BannerData.product}`}>
+          <Link href={`/all-product`}>
           <button type="button">
           {BannerData.buttonText}
           </button>

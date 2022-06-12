@@ -6,31 +6,10 @@ import { TiDeleteOutline } from 'react-icons/ti';
 
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
-// import getStripe from '../lib/getStripe';
 
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
-
-  // const handleCheckout = async () => {
-  //   const stripe = await getStripe();
-
-  //   const response = await fetch('/api/stripe', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(cartItems),
-  //   });
-
-  //   if(response.statusCode === 500) return;
-    
-  //   const data = await response.json();
-
-  //   toast.loading('Redirecting...');
-
-  //   stripe.redirectToCheckout({ sessionId: data.id });
-  // }
 
   return (
     <div className="cart-wrapper" ref={cartRef}>
@@ -83,7 +62,7 @@ const Cart = () => {
                     type="button"
                     className="remove-item"
                     onClick={() => onRemove(item)}
-                  >
+                   >
                     <TiDeleteOutline />
                   </button>
                 </div>
@@ -98,9 +77,16 @@ const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button type="button" className="btn" onClick={()=>{}}>
-                Pay with Stripe
+             <Link href="/">
+              <button 
+                 onClick={() => setShowCart(false)}
+                 type="button"
+                 className="btn">
+                <Link href='/productbuy'>
+                  Buy Product
+                </Link>
               </button>
+              </Link>
             </div>
           </div>
         )}
